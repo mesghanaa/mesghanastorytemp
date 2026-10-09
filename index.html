@@ -1,1 +1,101 @@
 <!-- Add your index page here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dance Murder Mystery</title>
+</head>
+<body>
+
+    <!-- Main Heading and Context -->
+    <h1> A Dance Studio Murder Mystery</h1>
+    
+    <blockquote>
+        <em>"The stage is set but the choreography is written in blood."</em>
+    </blockquote>
+
+    <p>
+        Dancers at the elite studio are being murdered one by one during daily rehearsals. 
+        Bodies keep turning up in sketchy areas like the changing rooms, bathrooms, and prop closets. 
+        As the <strong>Assistant Stage Manager</strong>, you must turn detective to figure out who the killer is and stop them before the big opening night performance. 
+        Can you track down the clues before the final curtain falls?
+    </p>
+
+    <!-- Visual Element Anchor -->
+    <p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9nPv7ACnseIOAWIk8vXMceHxK8kHJNPo0lGqrn6H0GUOnXy11WP1erLzC&s=10" alt="Dark eerie dance studio with shadows and mirrors" width="400">
+    </p>
+
+    <hr>
+
+    <!-- Advanced Requirement: Form with GET method acting to game.html -->
+    <h2>Investigator Sign-In</h2>
+    <p>Fill out your details to gain access to the crime scenes backstage:</p>
+
+    <form></form>
+        
+        <!-- Field 1: Text-based input with placeholder and label -->
+        <p>
+            <label for="investigatorName">Investigator Name:</label><br>
+            <input type="text" id="investigatorName" name="investigatorName" placeholder="Enter your name..." required>
+        </p>
+
+        <!-- Field 2: Select dropdown with 3 options and label -->
+        <p>
+            <label for="startingLocation">Begin Your Search:</label><br>
+            <select id="startingLocation" name="startingLocation" required>
+                <option value=""> Select a Crime Scene</option>
+                <option value="changing_room">Dancer Changing Rooms</option>
+                <option value="bathrooms">Backstage Bathrooms</option>
+                <option value="prop_storage">Prop & Costume Storage</option>
+            </select>
+        </p>
+
+        <!-- Field 3: Radio buttons with 3 options and labels -->
+        <p>
+            <label>Select Your Investigation Logic:</label><br>
+            <input type="radio" id="logic1" name="investigationStyle" value="clues" checked>
+            <label for="logic1">Search for physical evidence</label><br>
+            
+            <input type="radio" id="logic2" name="investigationStyle" value="interrogate">
+            <label for="logic2">Interrogate the Lead Choreographer and dancers</label><br>
+            
+            <input type="radio" id="logic3" name="investigationStyle" value="stealth">
+            <label for="logic3">Sneak into the locked Choreographer's Office upstairs</label>
+        </p>
+
+        <!-- Field 4: Other input of choice (Checkbox) -->
+        <p>
+            <label for="safetyGear">Equipment Checklist:</label><br>
+            <input type="checkbox" id="safetyGear" name="hasFlashlight" value="yes">
+            <label for="safetyGear">Bring Stage Flashlight (It gets dark)</label>
+        </p>
+
+        <!-- Submit Button: Pushes data into the URL via GET -->
+        <p>
+            <input type="submit" value="Start Investigation">
+        </p>
+
+    </form>
+
+    <hr>
+
+    <!-- Navigation link using relative path to aboutme.html -->
+    <p>
+        Want to know more about the developer? 
+        <a href="about.html">Read the About Me Page</a>
+    </p>
+
+    <!-- Explanatory note about structure and settings -->
+    <!-- 
+        Setting Log:
+        - Main Stage: Open area with mirrors and sound boards
+        - Dancer Changing Rooms: Lockers, vanity mirrors, costume racks (Search for poisoned hydration bottles)
+        - Backstage Bathrooms: Individual stalls where victims are discovered
+        - Prop & Costume Storage: Basement room with trunks, chemicals, and sharp tools (Search for toxic chemical receipt)
+        - Choreographer’s Office: Locked upstairs room with audition files and locked drawers (Search for the journal)
+    -->
+
+</body>
+</html>
