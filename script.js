@@ -1,4 +1,4 @@
-// Game Variables and Evidence State
+
 let gameState = {
     has_office_key: false,
     evidence: {
@@ -10,7 +10,7 @@ let gameState = {
     inventory: []
 };
 
-// Complete Story Scenes Architecture
+
 const scenes = {
     "main_stage": {
         title: "Main Stage - Night of the Final Dress Rehearsal",
@@ -155,7 +155,7 @@ function updateScene(sceneKey) {
     });
 }
 
-// Global Core Action Processing Module
+
 function executeAction(actionName) {
     if (actionName === "collect_bottle") {
         gameState.evidence.bottle = true;
