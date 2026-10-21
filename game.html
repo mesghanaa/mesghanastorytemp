@@ -3,58 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js" defer></script>
-
+    <title>Mesghana's Story</title>
 </head>
 <body>
     <header>
-      <nav>
+        <nav>
             <ul> 
                 <li><a href="index.html">Home</a></li>
-            </ul>
-            <ul> 
                 <li><a href="game.html">Play the game</a></li>
-            </ul>
-            <ul> 
                 <li><a href="about.html">About the creator</a></li>
             </ul>
         </nav>
-    </header>
-
-    <main>
-    <header>
-        <h1 id="scene-title">  </h1>
-        <h2 id="character-name">  </h2>
+        <h1 id="location-title"></h1>
+        <h2 id="character-title"></h2>
     </header>
     
-    <section>
-    <p id="scene-text">     </p>
-
-    </section>
-
-    <section>
-        <div id="choices-container"> </div>
-    </section>   
+    <main>
+        <p id="story-text"></p>
+        <div id="choices-container"></div>   
         
-    <section>
-        <p> Current HP:</p>
+        <p>Current Sanity:</p>
         <ul>
-            <li id="health-display"> 100</li>
+            <li id="sanity-display">100</li>
         </ul>
 
-        <p> Inventory:</p>
+        <p>Inventory:</p>
         <ul>
-            <li id="inventory-display"> </li>
+            <li id="inventory-display">None</li>
         </ul>
 
         <p id="message-display"></p>
-    </section>
-
-
     </main>
-    <footer>
 
-    </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>
