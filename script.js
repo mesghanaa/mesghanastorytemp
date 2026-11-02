@@ -220,3 +220,26 @@ invPanel.innerText = gameState.inventory.length > 0 ? gameState.inventory.join("
 window.onload = function() {
 updateScene("main_stage");
 };
+// Wait for the HTML to fully load
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+
+    if (form) {
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // 1. Stops the page from refreshing
+
+            // 2. Grab the data the user entered
+            const formData = new FormData(form);
+            const investigatorName = formData.get("investigatorName");
+            const startingLocation = formData.get("startingLocation");
+            const investigationStyle = formData.get("investigationStyle");
+            const hasFlashlight = formData.get("hasFlashlight") === "yes";
+
+            // 3. Trigger your game scenes here!
+            console.log(`Starting game for ${investigatorName} at ${startingLocation}`);
+            
+            // Example: Call a function you already wrote for your scenes
+            // startScene(startingLocation); 
+        });
+    }
+});

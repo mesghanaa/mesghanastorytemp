@@ -5,17 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dance Murder Mystery</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+        p {
+            color: rgb(198, 131, 110);
+            font-family:'Times New Roman', Times, serif;
+        }
+        .emphasis{
+
+    color:pink;
+    text-decoration: underline;
+    font-family: Arial, sans-serif;
+}
+  </style>
+    
+
 </head>
 <body>
 
+
     
-    <h1> A Dance Studio Murder Mystery</h1>
+    <h1  style="color:brown; text-align:center;background-color: black;" > A Dance Studio Murder Mystery</h1>
     
     <blockquote>
-        <em>"The stage is set but the choreography is written in blood."</em>
+        <em class= emphasis style="border-style:dotted;border-width:1px;border-color:rgb(121, 2, 2);">"The stage is set but the choreography is written in blood."</em>
     </blockquote>
 
-    <p>
+    <p style="background-color: rgb(142, 96, 96); font-family:'Times New Roman', Times, serif; ">
         Dancers at the elite studio are being murdered one by one during daily rehearsals. 
         Bodies keep turning up in sketchy areas like the changing rooms, bathrooms, and prop closets. 
         As the <strong>Assistant Stage Manager</strong>, you must turn detective to figure out who the killer is and stop them before the big opening night performance. 
@@ -30,20 +46,21 @@
     <hr>
 
 
-    <h2>Investigator Sign-In</h2>
-    <p>Fill out your details to gain access to the crime scenes backstage:</p>
+   <h2 style="color: brown; text-align:center; background-color: black;">
+    Investigator Sign-In</h2>
+    <p><strong>Fill out your details to gain access to the crime scenes backstage:</strong></p>
 
-    <form></form>
+   
+    <form>
         
-  
         <p>
-            <label for="investigatorName">Investigator Name:</label><br>
+            <label for="investigatorName" style="color:rgb(121, 2, 2);">Investigator Name:</label><br>
             <input type="text" id="investigatorName" name="investigatorName" placeholder="Enter your name..." required>
         </p>
 
         
         <p>
-            <label for="startingLocation">Begin Your Search:</label><br>
+            <label for="startingLocation" style="color:rgb(121, 2, 2);">Begin Your Search:</label><br>
             <select id="startingLocation" name="startingLocation" required>
                 <option value=""> Select a Crime Scene</option>
                 <option value="changing_room">Dancer Changing Rooms</option>
@@ -54,7 +71,7 @@
 
         
         <p>
-            <label>Select Your Investigation Logic:</label><br>
+            <label style="color:rgb(192, 99, 99); background-color: black;">Select Your Investigation Logic:</label><br>
             <input type="radio" id="logic1" name="investigationStyle" value="clues">
             <label for="logic1">Search for physical evidence</label><br>
             
@@ -71,22 +88,23 @@
             <label for="safetyGear">Bring Stage Flashlight (It gets dark)</label>
         </p>
 
-        <!-- Submit Button -->
+     
         <p>
-            <input type="submit" value="Start Investigation">
+            <input type="submit" value="Start Investigation" style="color: rgb(97, 18, 18);">
         </p>
 
+     
     </form>
 
     <hr>
 
-    <!-- Navigation link using relative path to aboutme.html -->
-    <p>
+    <p style="background-color: rgb(234, 215, 215); font-family:'Times New Roman', Times, serif; ">
         Want to know more about the developer? 
         <a href="about.html">Read the About Me Page</a>
     </p>
 
-  
+    
+    <script src="script.js"></script>
 
 </body>
 </html>

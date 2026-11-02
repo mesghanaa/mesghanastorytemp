@@ -1,0 +1,15 @@
+body {
+    background-color: rgba(211, 200, 200, 0.584);
+    text-align: center;
+    color:brown;
+    border: 2px solid rgb(27, 14, 62);
+
+}
+
+.heading {
+
+    background-color:aqua;
+    border: 5px dotted red;
+    
+
+}
