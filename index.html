@@ -25,86 +25,90 @@
 
 
     
-    <h1  style="color:brown; text-align:center;background-color: black;" > A Dance Studio Murder Mystery</h1>
-    
-    <blockquote>
-        <em class= emphasis style="border-style:dotted;border-width:1px;border-color:rgb(121, 2, 2);">"The stage is set but the choreography is written in blood."</em>
-    </blockquote>
+     
+   <div id="intro-screen">
+       <h1 style="color:brown; text-align:center;background-color: black;"> A Dance Studio Murder Mystery</h1>
+       
+       <blockquote>
+           <em class="emphasis" style="border-style:dotted;border-width:1px;border-color:rgb(121, 2, 2);">"The stage is set but the choreography is written in blood."</em>
+       </blockquote>
 
-    <p style="background-color: rgb(142, 96, 96); font-family:'Times New Roman', Times, serif; ">
-        Dancers at the elite studio are being murdered one by one during daily rehearsals. 
-        Bodies keep turning up in sketchy areas like the changing rooms, bathrooms, and prop closets. 
-        As the <strong>Assistant Stage Manager</strong>, you must turn detective to figure out who the killer is and stop them before the big opening night performance. 
-        Can you track down the clues before the final curtain falls?
-    </p>
+       <p style="background-color: rgb(142, 96, 96); font-family:'Times New Roman', Times, serif; ">
+           Dancers at the elite studio are being murdered one by one during daily rehearsals. 
+           Bodies keep turning up in sketchy areas like the changing rooms, bathrooms, and prop closets. 
+           As the <strong>Assistant Stage Manager</strong>, you must turn detective to figure out who the killer is and stop them before the big opening night performance. 
+           Can you track down the clues before the final curtain falls?
+       </p>
 
-    
-    <p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9nPv7ACnseIOAWIk8vXMceHxK8kHJNPo0lGqrn6H0GUOnXy11WP1erLzC&s=10" alt="Dark eerie dance studio with shadows and mirrors" width="400">
-    </p>
+       <p>
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9nPv7ACnseIOAWIk8vXMceHxK8kHJNPo0lGqrn6H0GUOnXy11WP1erLzC&s=10" alt="Dark eerie dance studio with shadows and mirrors" width="400"> 
+       <hr>
 
-    <hr>
+       <h2 style="color: brown; text-align:center; background-color: black;">Sign-In</h2>
+       <p><strong>Fill out your details:</strong></p>
 
+        <form>
+            <p>
+                <label for="investigatorName" style="color:rgb(121, 2, 2);"> Name:</label><br>
+                <input type="text" id="investigatorName" name="investigatorName" placeholder="Enter your name..." required>
+            </p>
 
-   <h2 style="color: brown; text-align:center; background-color: black;">
-    Investigator Sign-In</h2>
-    <p><strong>Fill out your details to gain access to the crime scenes backstage:</strong></p>
+            <p>
+                <label for="startingLocation" style="color:rgb(121, 2, 2);">Begin Your Search:</label><br>
+                <select id="startingLocation" name="startingLocation" required>
+                    <option value=""> Select a Crime Scene</option>
+                    <option value="changing_rooms">Dancer Changing Rooms</option>
+                    <option value="bathrooms">Backstage Bathrooms</option>
+                    <option value="prop_storage">Prop & Costume Storage</option>
+                </select>
+            </p>
+
+            <p>
+                <label style="color:rgb(192, 99, 99); background-color: black;">Select Your Investigation Logic:</label><br>
+                <input type="radio" id="logic1" name="investigationStyle" value="clues">
+                <label for="logic1">Search for physical evidence</label><br>
+                
+                <input type="radio" id="logic2" name="investigationStyle" value="interrogate">
+                <label for="logic2">Interrogate the Lead Choreographer and dancers</label><br>
+                
+                <input type="radio" id="logic3" name="investigationStyle" value="stealth">
+                <label for="logic3">Sneak into the locked Choreographer's Office upstairs</label>
+            </p>
+
+            <p>
+                <label for="safetyGear">Equipment Checklist:</label><br>
+                <input type="checkbox" id="safetyGear" name="hasFlashlight" value="yes">
+                <label for="safetyGear">Bring Stage Flashlight (It gets dark)</label>
+            </p>
+
+            <p>
+                <input type="submit" value="Start Investigation" style="color: rgb(97, 18, 18);">
+            </p>
+        </form>
+    </div>
 
    
-    <form>
+    <div id="game-ui" style="display: none; padding: 20px; font-family: Arial, sans-serif; background: #111; color: #eee; max-width: 600px; margin: 20px auto; border-radius: 8px;">
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #444; padding-bottom: 10px; margin-bottom: 15px;">
+            <div> Sanity: <span id="sanity-display">100</span>%</div>
+            <div> Inventory: [<span id="inventory-display">None</span>]</div>
+        </div>
+
+        <h2 id="location-title" style="color: pink;"></h2>
+        <h4 id="character-title" style="color: rgb(198, 131, 110); margin-top: -10px;"></h4>
         
-        <p>
-            <label for="investigatorName" style="color:rgb(121, 2, 2);">Investigator Name:</label><br>
-            <input type="text" id="investigatorName" name="investigatorName" placeholder="Enter your name..." required>
-        </p>
-
+        <p id="story-text" style="line-height: 1.6;"></p>
+        <p id="message-display" style="color: gold; font-weight: bold; background: #222; padding: 5px; border-left: 3px solid gold;"></p>
         
-        <p>
-            <label for="startingLocation" style="color:rgb(121, 2, 2);">Begin Your Search:</label><br>
-            <select id="startingLocation" name="startingLocation" required>
-                <option value=""> Select a Crime Scene</option>
-                <option value="changing_room">Dancer Changing Rooms</option>
-                <option value="bathrooms">Backstage Bathrooms</option>
-                <option value="prop_storage">Prop & Costume Storage</option>
-            </select>
-        </p>
-
-        
-        <p>
-            <label style="color:rgb(192, 99, 99); background-color: black;">Select Your Investigation Logic:</label><br>
-            <input type="radio" id="logic1" name="investigationStyle" value="clues">
-            <label for="logic1">Search for physical evidence</label><br>
-            
-            <input type="radio" id="logic2" name="investigationStyle" value="interrogate">
-            <label for="logic2">Interrogate the Lead Choreographer and dancers</label><br>
-            
-            <input type="radio" id="logic3" name="investigationStyle" value="stealth">
-            <label for="logic3">Sneak into the locked Choreographer's Office upstairs</label>
-        </p>
-
-        <p>
-            <label for="safetyGear">Equipment Checklist:</label><br>
-            <input type="checkbox" id="safetyGear" name="hasFlashlight" value="yes">
-            <label for="safetyGear">Bring Stage Flashlight (It gets dark)</label>
-        </p>
-
-     
-        <p>
-            <input type="submit" value="Start Investigation" style="color: rgb(97, 18, 18);">
-        </p>
-
-     
-    </form>
+        <div id="choices-container" style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;"></div>
+    </div>
 
     <hr>
-
     <p style="background-color: rgb(234, 215, 215); font-family:'Times New Roman', Times, serif; ">
         Want to know more about the developer? 
         <a href="about.html">Read the About Me Page</a>
     </p>
 
-    
     <script src="script.js"></script>
-
 </body>
 </html>

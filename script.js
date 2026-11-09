@@ -127,11 +127,12 @@ const scenes = {
     }
 };
 
-// UI Rendering Engine
 function updateScene(sceneKey) {
     const currentScene = scenes[sceneKey];
     
+   
     document.getElementById("message-display").innerText = "";
+    
     document.getElementById("location-title").innerText = currentScene.title;
     document.getElementById("character-title").innerText = currentScene.character;
     document.getElementById("story-text").innerText = currentScene.text;
@@ -143,12 +144,16 @@ function updateScene(sceneKey) {
     activeChoices.forEach(choice => {
         const button = document.createElement("button");
         button.innerText = choice.text;
+        
         button.addEventListener("click", function() {
-            if (choice.action) {
-                executeAction(choice.action);
-            }
+          
             if (choice.nextScene) {
                 updateScene(choice.nextScene);
+            }
+            
+
+            if (choice.action) {
+                executeAction(choice.action);
             }
         });
         choicesContainer.appendChild(button);
@@ -172,7 +177,7 @@ function executeAction(actionName) {
 else if (actionName === "collect_key") {
 gameState.has_office_key = true;
 gameState.inventory.push("L.C. Office Key");
-document.getElementById("message-display").innerText = "Result: You pick up the heavy key stamped with the initials 'L.C.' (has_office_key = True)";
+document.getElementById("message-display").innerText = "Result: You pick up the heavy key stamped with the initials 'L.C.'";
 }
 else if (actionName === "read_log") {
 gameState.sanity -= 5;
@@ -209,37 +214,39 @@ gameState.inventory = [];
 }
 updateUI();
 }
-// Interface Display Sync Unit
+
 function updateUI() {
 if (gameState.sanity < 0) gameState.sanity = 0;
 document.getElementById("sanity-display").innerText = gameState.sanity;
 const invPanel = document.getElementById("inventory-display");
 invPanel.innerText = gameState.inventory.length > 0 ? gameState.inventory.join(", ") : "None";
 }
-// Program Entry Point
-window.onload = function() {
-updateScene("main_stage");
-};
-// Wait for the HTML to fully load
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
 
     if (form) {
         form.addEventListener("submit", function(event) {
-            event.preventDefault(); // 1. Stops the page from refreshing
+            event.preventDefault(); 
 
-            // 2. Grab the data the user entered
             const formData = new FormData(form);
-            const investigatorName = formData.get("investigatorName");
+            const Name = formData.get("Name");
             const startingLocation = formData.get("startingLocation");
-            const investigationStyle = formData.get("investigationStyle");
             const hasFlashlight = formData.get("hasFlashlight") === "yes";
 
-            // 3. Trigger your game scenes here!
-            console.log(`Starting game for ${investigatorName} at ${startingLocation}`);
+           
+            if (hasFlashlight && !gameState.inventory.includes("Stage Flashlight")) {
+                gameState.inventory.push("Stage Flashlight");
+            }
+
             
-            // Example: Call a function you already wrote for your scenes
-            // startScene(startingLocation); 
+            document.getElementById("intro-screen").style.display = "none";
+            document.getElementById("game-ui").style.display = "block";
+
+            
+            updateUI();
+            updateScene(startingLocation); 
         });
     }
 });
